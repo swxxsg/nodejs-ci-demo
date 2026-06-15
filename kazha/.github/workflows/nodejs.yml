@@ -15,8 +15,10 @@ jobs:
         node-version: [20.x] # 升级为长期支持版Node20，废弃12.x
 
     steps:
-      # 升级到v4最新稳定版
+      # 升级到v4最新稳定版，指定代码拉到根目录
       - uses: actions/checkout@v4
+        with:
+          path: .
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
